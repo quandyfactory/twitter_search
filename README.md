@@ -29,7 +29,7 @@ From the command line, execute the script with a keyword argument, e.g.
 
 The script will query the twitter search API recursively (using the `next_page` value from the response) and save the results in a TSV file in the format: `twitter_search_keyword_yyyy-mm-dd_hh_mm_ss.tsv`.
 
-Note that if you are searching for a hashtag, on some systems you will need to escape the [octothorpe](http://en.wiktionary.org/wiki/octothorpe) to have the `sys` module recognize it as an argument.
+Note that if you are searching for a hashtag, on some systems you will need to escape the [octothorpe](http://en.wiktionary.org/wiki/octothorpe) (the # symbol) to have the `sys` module recognize it as an argument.
 
 ## Version History
 
