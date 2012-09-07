@@ -10,7 +10,7 @@ Queries the twitter search API for a keword and saves the results in TSV format.
 
 ## Licence
 
-Released under the GNU General Public Licence, Version 2: [http://www.gnu.org/licenses/old-licenses/gpl-2.0.html][4]
+Released under the GNU General Public Licence, Version 2: [http://www.gnu.org/licenses/old-licenses/gpl-2.0.html](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ## This Version
 
