@@ -1,17 +1,27 @@
 #!/usr/bin/env python
 
+__version__ = 0.1
+
 import datetime
 import json
 import os
 import sys
 import urllib
 
-path = os.path.realpath(__file__).replace(sys.argv[0], '')
-
 keys = ('from_user', 'from_user_name', 'created_at', 'text', 'to_user')
 base_url = 'http://search.twitter.com/search.json'
 
+def timestamp_string():
+    return str(datetime.datetime.now())[:-7].replace(' ', '_').replace(':', '_')
+
 if __name__ == '__main__':
+
+    filename = sys.argv[0]
+    if filename[:2] == './': filename = filename[2:]
+    path = os.path.realpath(__file__).replace(filename, '')
+    
+    if path[-1] != '/': path = '%s/' % (path)
+
     args = sys.argv
     if len(args) < 2:
         print 'Keyword needed.'
@@ -50,11 +60,11 @@ if __name__ == '__main__':
             print 'Last page'
             print
             keep_going = False
-    
+            
     output = '\n'.join(csv)
     output = output.encode('utf8')
     
-    filename = '%stwitter_search_%s_%s.tsv' % (path, '_'.join(args[1:]), str(datetime.datetime.now())[:-7])
+    filename = '%stwitter_search_%s_%s.tsv' % (path, '_'.join(args[1:]), timestamp_string())
     
     with open(filename, 'w') as file:
         file.write(output)
