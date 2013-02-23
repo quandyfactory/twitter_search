@@ -1,6 +1,6 @@
 #twitter_search
 
-Queries the twitter search API for a keword and saves the results in TSV format.
+Queries the twitter search API for a keyword and saves the results in TSV format.
 
 ## Author
 
@@ -14,8 +14,8 @@ Released under the GNU General Public Licence, Version 2: [http://www.gnu.org/li
 
 ## This Version
 
-* Version: 0.1
-* Release Date: 2012-09-07
+* Version: 0.2
+* Release Date: 2013-02-22
   
 ## Requirements
 
@@ -32,6 +32,12 @@ The script will query the twitter search API recursively (using the `next_page` 
 Note that if you are searching for a hashtag, on some systems you will need to escape the [octothorpe](http://en.wiktionary.org/wiki/octothorpe) (the # symbol) to have the `sys` module recognize it as an argument.
 
 ## Version History
+
+### Version 0.2
+
+* Release Date: 2013-02-22
+* Changes:
+    * Script was refusing to save to file with unicode decode error. I took a dirty shortcut and added a function that strips out non-unicode characters. Obviously this still needs fixing.
 
 ### Version 0.1
 
