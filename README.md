@@ -14,8 +14,8 @@ Released under the GNU General Public Licence, Version 2: [http://www.gnu.org/li
 
 ## This Version
 
-* Version: 0.2
-* Release Date: 2013-02-22
+* Version: 0.3
+* Release Date: 2013-04-08
   
 ## Requirements
 
@@ -32,6 +32,12 @@ The script will query the twitter search API recursively (using the `next_page` 
 Note that if you are searching for a hashtag, on some systems you will need to escape the [octothorpe](http://en.wiktionary.org/wiki/octothorpe) (the # symbol) to have the `sys` module recognize it as an argument.
 
 ## Version History
+
+### Version 0.3
+
+* Release Date: 2013-04-08
+* Changes:
+    * Fixed bug to ensure content downloads and is saved properly.
 
 ### Version 0.2
 

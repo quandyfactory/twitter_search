@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-__version__ = 0.2
+__version__ = '0.3'
 
 import datetime
 import json
@@ -9,8 +9,9 @@ import sys
 import urllib
 
 path = os.path.realpath(__file__).replace(sys.argv[0], '')
+path = '/home/hammertime/hcf/'
 
-keys = ('from_user', 'from_user_name', 'created_at', 'text', 'to_user')
+keys = ('from_user', 'created_at', 'text', 'to_user')
 base_url = 'http://search.twitter.com/search.json'
 
 def strip_unicode(text):
@@ -43,11 +44,19 @@ if __name__ == '__main__':
         try:
             results = obj['results']
             for result in results:
+                this_dict = {}
+                for key in keys:
+                    this_dict[key] = ''
+                for key in result.keys():
+                    if key in keys:
+                        this_dict[key] = result[key].replace('\n', '').replace('\r', '')
+                    
                 csv.append('\t'.join(
-                    [unicode(result[k]) if result[k] != None else '' for k in keys])
+                    [this_dict[k] if this_dict[k] != None else '' for k in keys])
                 )
         except:
-            print 'HTTP request failed:\n\n'
+            print 'Error:\n\n'
+            print sys.exc_info()[0]
             print page
             keep_going = False
 
